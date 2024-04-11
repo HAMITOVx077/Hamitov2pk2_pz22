@@ -1,0 +1,81 @@
+﻿<Window x:Class="Hamitov2pk2_pz22.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hamitov2pk2_pz22"
+        mc:Ignorable="d"
+        Title="Текстовый редактор" Height="450" Width="800">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Menu>
+                <MenuItem Header="Файл">
+                    <MenuItem Header="Создать" Click="CreateFileMenuIntem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="icons\create.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Удалить текущий" Click="DeleteFileMenuIntem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="icons\remove.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Очистить список файлов" Click="DeleteAllFileMenuIntem_Click"/>
+                </MenuItem>
+                <MenuItem Header="About">
+                    <MenuItem Header="Об авторе" Click="AboutAftorInformation_Click"/>
+                    <MenuItem Header="О программе" Click="AboutProgramInformation_Click"/>
+                </MenuItem>
+            </Menu>
+            <WrapPanel MinHeight="20" HorizontalAlignment="Center">
+                <Button x:Name="Bold" Width="20" Height="20" ToolTip="Сделать текст жирным" Click="Bold_Click">
+                    <Image Source="icons\bold.png"/>
+                </Button>
+                <Button x:Name="Italic" Width="20" Height="20" ToolTip="Сделать текст курсивом" Click="Italic_Click">
+                    <Image Source="icons\italic.png"/>
+                </Button>
+                <Button x:Name="CrossedOut" Width="20" Height="20" ToolTip="Сделать текст зачеркнутым" Margin="0, 0, 10, 0" Click="CrossedOut_Click">
+                    <Image Source="icons\crossedout.png"/>
+                </Button>
+                <Button x:Name="TextCenter" Width="20" Height="20" ToolTip="Разместить текст по центру" Click="TextCenter_Click">
+                    <Image Source="icons\text_center.png"/>
+                </Button>
+                <Button x:Name="TextLeft" Width="20" Height="20" ToolTip="Разместить текст по левому краю" Click="TextLeft_Click">
+                    <Image Source="icons\text_left.png"/>
+                </Button>
+                <Button x:Name="TextRight" Width="20" Height="20" ToolTip="Разместить текст по правому краю" Click="TextRight_Click">
+                    <Image Source="icons\text_right.png"/>
+                </Button>
+                <Button x:Name="TextWidth" Width="20" Height="20" ToolTip="Разместить текст по ширине" Margin="0, 0, 15, 0" Click="TextWidth_Click">
+                    <Image Source="icons\text_width.png"/>
+                </Button>
+                <Button x:Name="SaveText" Width="20" Height="20" ToolTip="Сохранить содержимое" Click="SaveText_Click">
+                    <Image Source="icons\save.png"/>
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+
+        <StatusBar DockPanel.Dock="Bottom" Grid.Row="1">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <TextBlock Name = "LeftBlock" />
+            <StatusBarItem Grid.Column="1">
+                <TextBlock Name = "RightBlock" />
+            </StatusBarItem>
+        </StatusBar>
+
+        <ListBox Name="filesListBox" MinWidth="200" DockPanel.Dock="Left" Background="#CAC4B0" MouseDoubleClick="filesListBox_MouseDoubleClick" ></ListBox>
+
+        <TextBox MaxWidth="800" Name="EditField" AcceptsReturn="True" AcceptsTab="True" SpellCheck.IsEnabled="True" TextChanged="EditFieldTextChanged" SelectionChanged="TextBox_SelectionChanged" Language="ru-ru" TextWrapping="Wrap"/>
+
+    </DockPanel>
+</Window>

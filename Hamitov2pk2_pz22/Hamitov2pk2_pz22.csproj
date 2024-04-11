@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icons\bold.png" />
+    <None Remove="icons\create.png" />
+    <None Remove="icons\crossedout.png" />
+    <None Remove="icons\italic.png" />
+    <None Remove="icons\remove.png" />
+    <None Remove="icons\save.png" />
+    <None Remove="icons\text_center.png" />
+    <None Remove="icons\text_left.png" />
+    <None Remove="icons\text_right.png" />
+    <None Remove="icons\text_width.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net8.0-windows\Hamitov2pk2_pz22.deps.json" />
+    <Content Include="bin\Debug\net8.0-windows\Hamitov2pk2_pz22.runtimeconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net8.0-windows\Hamitov2pk2_pz22.dll" />
+    <None Include="bin\Debug\net8.0-windows\Hamitov2pk2_pz22.exe" />
+    <None Include="bin\Debug\net8.0-windows\Hamitov2pk2_pz22.pdb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\bold.png" />
+    <Resource Include="icons\create.png" />
+    <Resource Include="icons\crossedout.png" />
+    <Resource Include="icons\italic.png" />
+    <Resource Include="icons\remove.png" />
+    <Resource Include="icons\save.png" />
+    <Resource Include="icons\text_center.png" />
+    <Resource Include="icons\text_left.png" />
+    <Resource Include="icons\text_right.png" />
+    <Resource Include="icons\text_width.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net8.0-windows\data\" />
+  </ItemGroup>
+
+</Project>
